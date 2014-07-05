@@ -26,6 +26,10 @@ object VimtegratePlugin extends Plugin {
           else loggers
         }
       }
+    },
+
+    testListeners <+= (serverName, vimCommand, postQuickfixCommands, sources in Test) map { (srvName, vimCmd, postQfCommands, sources) =>
+      new TestsListener(new ServerQuickfix(srvName, vimCmd, postQfCommands), sources)
     }
   )
 }

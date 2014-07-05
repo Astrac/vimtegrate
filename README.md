@@ -14,6 +14,8 @@ to use a different name. Whenever a project using this plugin is compiled the fo
 * The quickfix window is shown
 * The cursor is sent back to the last window
 
+The plugin will report both compilation and test failures.
+
 ## Customization
 
 From the `astrac.vimtegrate.Plugin` class:
@@ -29,7 +31,7 @@ Set this options to change the behaviour of the plugin.
 At the moment the project is in the very early stages of development and is hardly tested at all. Any contribution in consolidating
 what is implemented will be much appreciated. Some more things that I want to implement:
 
-* Quickfix on tests failures
+* Better test error source resolution (somewhat hacky at the moment)
 * ctags generation
 * Support quickfix output to file
 * Stack-trace highlight throughout the sourcein case of error (more an idea to investigate than anything concrete at the moment)

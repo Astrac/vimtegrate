@@ -36,7 +36,9 @@ class CompilationLogger(quickfix: Quickfix) extends BasicLogger {
     }
   }
 
-  override def log(level: Level.Value, message: => String) : Unit = {
+  override def log(level: Level.Value, rawMessage: => String) : Unit = {
+    val message = rawMessage.replace("\n", " ")
+
     if (isStart(message)) fixes = Nil
     else if (isFinish(message)) send()
     else parseFix(level, message) foreach { fix => fixes = fix :: fixes }
