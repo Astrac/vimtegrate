@@ -22,7 +22,7 @@ From the `astrac.vimtegrate.Plugin` class:
 
     val serverName = SettingKey[String]("vim-server-name", "The name of the vim server where to send the quickfix")
     val vimCommand = SettingKey[String]("vim-command", "The command to be used to run the vim client")
-    val postQuickfixCommands = SettingKey[String]("vim-post-quickfix-commands", "Whether or not to automatically show the quickfix window")
+    val postQuickfixCommands = SettingKey[String]("vim-post-quickfix-commands", "Commands to execute after compilation errors are sent (by default :cwindow<CR><C-w><C-p>)")
 
 Set this options to change the behaviour of the plugin.
 
